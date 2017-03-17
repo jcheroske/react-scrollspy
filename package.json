@@ -1,25 +1,19 @@
 {
-  "name": "react-with-timer-hoc",
-  "description": "A React HOC that simplifies setTimeout-based timers.",
-  "version": "0.2.2",
+  "name": "babel-webpack-package-boilerplate",
+  "description": "##REPLACE##",
+  "version": "0.0.1",
   "author": "Jay Cheroske <jay@portal.org>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jcheroske/react-with-timer-hoc.git"
+    "url": "git://github.com/jcheroske/##REPLACE##.git"
   },
   "bugs": {
-    "url": "https://github.com/jcheroske/react-with-timer-hoc/issues"
+    "url": "https://github.com/jcheroske/##REPLACE##/issues"
   },
-  "homepage": "https://github.com/jcheroske/react-with-timer-hoc#readme",
+  "homepage": "https://github.com/jcheroske/##REPLACE###readme",
   "license": "MIT",
   "keywords": [
-    "react",
-    "higher-order",
-    "components",
-    "hoc",
-    "recompose",
-    "utilities",
-    "setTimeout"
+    "##REPLACE##"
   ],
   "main": "./dist/index.js",
   "scripts": {
@@ -40,10 +34,6 @@
   "dependencies": {
   },
   "peerDependencies": {
-    "invariant": "^2.2.2",
-    "lodash": "^4.17.4",
-    "react": "^15.4.2",
-    "warning": "^3.0.0"
   },
   "devDependencies": {
     "ava": "^0.18.2",
