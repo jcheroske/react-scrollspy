@@ -1,3 +1,2 @@
-export * from 'doctor-name'
+export * from 'ScrollSpy'
 
-export * from 'Name'
