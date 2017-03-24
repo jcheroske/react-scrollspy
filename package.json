@@ -1,23 +1,30 @@
 {
-  "name": "babel-webpack-package-boilerplate",
-  "description": "##REPLACE##",
+  "name": "babel-webpack-ava-react-boilerplate",
+  "description": "A straightforward boilerplate, using Babel-env, Webpack, AVA, Enzyme and Sinon. Geared towards React-focused NPM packages.",
   "version": "0.0.1",
   "author": "Jay Cheroske <jay@portal.org>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jcheroske/##REPLACE##.git"
+    "url": "git://github.com/jcheroske/babel-webpack-ava-react-boilerplate.git"
   },
   "bugs": {
-    "url": "https://github.com/jcheroske/##REPLACE##/issues"
+    "url": "https://github.com/jcheroske/babel-webpack-ava-react-boilerplate/issues"
   },
-  "homepage": "https://github.com/jcheroske/##REPLACE###readme",
+  "homepage": "https://github.com/jcheroske/babel-webpack-ava-react-boilerplate#readme",
   "license": "MIT",
   "keywords": [
-    "##REPLACE##"
+    "babel",
+    "babel-env",
+    "ava",
+    "eslint",
+    "enzyme",
+    "sinon",
+    "react"
   ],
   "main": "./dist/index.js",
   "scripts": {
-    "build": "NODE_ENV=development webpack --progress --colors",
+    "build": "npm run lint && npm run build:dev",
+    "build:dev": "NODE_ENV=development webpack --progress --colors",
     "build:prod": "NODE_ENV=production webpack --progress --colors",
     "build:watch": "NODE_ENV=development webpack --progress --colors --watch",
     "clean": "rimraf dist/*",
@@ -31,10 +38,8 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-  },
-  "peerDependencies": {
-  },
+  "dependencies": {},
+  "peerDependencies": {},
   "devDependencies": {
     "ava": "^0.18.2",
     "babel-core": "^6.24.0",
@@ -45,12 +50,13 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.2.1",
     "babel-preset-react": "^6.23.0",
-    "babel-preset-stage-0": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.24.0",
+    "cheerio": "^0.22.0",
     "enzyme": "^2.7.1",
     "eslint": "^3.17.1",
     "eslint-config-standard": "^7.0.1",
-    "eslint-plugin-import": "^2.2.0",
+    "eslint-config-standard-react": "^4.3.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^6.10.0",
     "eslint-plugin-standard": "^2.1.1",
@@ -83,5 +89,40 @@
       "./ava-test-setup"
     ],
     "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": "last 2 versions",
+            "node": "current"
+          }
+        }
+      ],
+      "stage-2",
+      "react"
+    ],
+    "plugins": [
+      "transform-decorators-legacy"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
+    "globals": {
+      "sinon": true
+    },
+    "parser": "babel-eslint",
+    "plugins": [],
+    "root": true,
+    "rules": {}
   }
 }
