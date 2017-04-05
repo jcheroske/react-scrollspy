@@ -43,4 +43,4 @@ class ScrollSpy extends Component {
   }
 }
 
-export default {ScrollSpy}
+export default ScrollSpy
