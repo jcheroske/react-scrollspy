@@ -1,13 +1,10 @@
 import React, {Component, PropTypes} from 'react'
 import Waypoint from 'react-waypoint'
 
-const TOP = 'top';
-const BOTTOM = 'bottom';
+const ABOVE = 'above'
+const INSIDE = 'inside'
 
-const ABOVE = 'above';
-const INSIDE = 'inside';
-
-export class ScrollSpy extends Component {
+class ScrollSpy extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
@@ -32,16 +29,18 @@ export class ScrollSpy extends Component {
     }
   }
 
-  render() {
-    const {name, offset} = this.props
+  render () {
+    const {children, name, offset} = this.props
 
     return (
-      <div className="ScrollSpy-wrapper">
+      <div className='ScrollSpy-wrapper'>
         <a name={name} />
-        <Waypoint topOffset={offset} onPositionChange={ this.topWaypointTriggered } />
+        <Waypoint topOffset={offset} onPositionChange={this.topWaypointTriggered} />
         {children}
-        <Waypoint topOffset={offset} onPositionChange={ this.bottomWaypointTriggered } />
+        <Waypoint topOffset={offset} onPositionChange={this.bottomWaypointTriggered} />
       </div>
     )
   }
 }
+
+export default {ScrollSpy}

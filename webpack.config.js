@@ -9,10 +9,7 @@ module.exports = {
   devtool: PROD ? 'nosources-source-map' : 'source-map',
   entry: './src/index.js',
   externals: {
-//    invariant: 'invariant',
-    lodash: 'lodash',
     react: 'react',
-//    warning: 'warning',
     'react-waypoint': 'react-waypoint'
   },
   module: {
